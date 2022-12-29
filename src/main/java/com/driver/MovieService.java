@@ -27,7 +27,7 @@ public class MovieService {
     public Director getDirectorByName(String directorName){
         return movieRepository.getDirectorFromDb(directorName);
     }
-    public List<Movie> getMoviesByDirectorName(String directorName){
+    public List<String> getMoviesByDirectorName(String directorName){
         return movieRepository.getListOfMovieByDirectorName(directorName);
     }
     public List<Movie> findAllMovies(){

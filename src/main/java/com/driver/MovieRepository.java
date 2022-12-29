@@ -47,10 +47,16 @@ public class MovieRepository {
         }
         return null;
     }
-    public List<Movie> getListOfMovieByDirectorName(String directorName){
+    public List<String> getListOfMovieByDirectorName(String directorName){
 
         if(pairMovieDirectorMap.containsKey(directorName)) {
-            return pairMovieDirectorMap.get(directorName);
+            List<String> movieName = new ArrayList<>();
+           List <Movie> movieList = pairMovieDirectorMap.get(directorName);
+            for(int i = 0; i < movieList.size(); i++){
+                 Movie movie =movieList.get(i);
+                 movieName.add(movie.name);
+            }
+            return  movieName;
         }
         return null;
     }
