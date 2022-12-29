@@ -60,10 +60,10 @@ public class MovieRepository {
         }
         return null;
     }
-    public List<Movie> listOfMoviesFromDb(){
-        List<Movie> movieList = new ArrayList<>();
+    public List<String> listOfMoviesFromDb(){
+        List<String> movieList = new ArrayList<>();
         for(Movie EntrySet :  movieMap.values()){
-            movieList.add(EntrySet);
+            movieList.add(EntrySet.name);
         }
         return  movieList;
     }

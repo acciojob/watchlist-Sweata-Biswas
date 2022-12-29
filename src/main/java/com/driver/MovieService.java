@@ -30,7 +30,7 @@ public class MovieService {
     public List<String> getMoviesByDirectorName(String directorName){
         return movieRepository.getListOfMovieByDirectorName(directorName);
     }
-    public List<Movie> findAllMovies(){
+    public List<String> findAllMovies(){
         return movieRepository.listOfMoviesFromDb();
     }
     public String deleteDirectorByName(String directorName){

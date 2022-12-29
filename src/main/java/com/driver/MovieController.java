@@ -58,7 +58,7 @@ public class MovieController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
     @GetMapping("/movies/get-all-movies")
-    public ResponseEntity<List<Movie>> findAllMovies(){
+    public ResponseEntity<List<String>> findAllMovies(){
         return new ResponseEntity<>(movieService.findAllMovies(),HttpStatus.OK);
     }
     @DeleteMapping("/movies/delete-director-by-name")
