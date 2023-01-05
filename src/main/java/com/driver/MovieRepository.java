@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Repository
@@ -22,6 +23,26 @@ public class MovieRepository {
         String key = director.name;
         directorMap.put(key,director);
         return "Successfully Added";
+    }
+    public String getDirectorByMovieName(String movieName){
+        if(movieMap.containsKey(movieName)){
+
+
+
+            for (Map.Entry<String, List<Movie>> entry : pairMovieDirectorMap.entrySet()) {
+                String director = entry.getKey();
+                List<Movie> movieList = entry.getValue();
+                for (Movie movie : movieList) {
+                    String getMovie = movie.getName();
+                    if (getMovie.equals(movieName)) {
+                        return director;
+
+                    }
+                }
+
+            }
+        }
+        return null;
     }
     public String addPairOfMovieAndDirectorInD(String movieName,String directorName){
         if(movieMap.containsKey(movieName) && directorMap.containsKey(directorName)){
